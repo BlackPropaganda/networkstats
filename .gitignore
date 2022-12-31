@@ -6,6 +6,14 @@ __pycache__/
 # C extensions
 *.so
 
+# sensitive config files
+config.json
+
+# tcpdump/wireshark files containing potentially sensitive information
+*.pcap
+*.pcapng
+
+
 # Distribution / packaging
 .Python
 build/
