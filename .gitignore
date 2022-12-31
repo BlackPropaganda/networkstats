@@ -8,6 +8,7 @@ __pycache__/
 
 # sensitive config files
 config.json
+*.json
 
 # tcpdump/wireshark files containing potentially sensitive information
 *.pcap
