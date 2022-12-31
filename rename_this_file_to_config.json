@@ -1,0 +1,4 @@
+{
+  "shodan_api": "your_API_key_here",
+  "host_search": true
+}
