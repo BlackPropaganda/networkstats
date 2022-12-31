@@ -7,7 +7,7 @@ __pycache__/
 *.so
 
 # sensitive config files
-config.json
+profiler/config.json
 
 # tcpdump/wireshark files containing potentially sensitive information
 *.pcap
