@@ -1,5 +1,6 @@
 import shodan
 import json
+from time import sleep
 
 
 class Interface:
@@ -12,6 +13,9 @@ class Interface:
         self.api = shodan.Shodan(self.api_key)
 
     def host_search(self, ip_addr):
+        print(f"Querying: {ip_addr}")
+        # avoiding rate limiting
+        sleep(1)
         if self.search_hosts:
             try:
                 # data = self.api.host(ip_addr)
@@ -22,7 +26,7 @@ class Interface:
                 print(f"Cannot lookup: {ip_addr}\n Error: {e}")
                 return {"Error": "Not Found"}
         else:
-            print(f"querying: {ip_addr}")
+            # print(f"querying: {ip_addr}")
             return None
 
 
@@ -47,7 +51,7 @@ class Interface:
 
 
 if __name__ == '__main__':
-    iface = Interface("../config.json")
+    iface = Interface("../../config.json")
     # pretty = iface.host_search("8.8.8.8")
     # print(pretty)
 

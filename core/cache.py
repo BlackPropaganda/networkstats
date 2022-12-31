@@ -1,9 +1,9 @@
 import json
 
-from host import Host, is_public_ip
-from connection import get_proto_spec
-from shodan_data.interface import Interface
-from intel import Intel
+from core.host import Host, is_public_ip
+from core.connection import get_proto_spec
+from core.shodan_data.interface import Interface
+from core.intel import Intel
 
 
 class Cache:

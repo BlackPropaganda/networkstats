@@ -2,9 +2,8 @@ import datetime
 import dpkt
 from dpkt.utils import mac_to_str, inet_to_str
 
-from host import Host
-from cache import Cache
-from connection import Connection
+from core.cache import Cache
+from core.connection import Connection
 
 
 def parse_connections(pcap):

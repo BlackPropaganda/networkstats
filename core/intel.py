@@ -1,6 +1,6 @@
 from socket import getservbyport
 
-from geo.location import Location
+from networkstats.core.geo.location import Location
 
 
 class Intel:
@@ -18,7 +18,12 @@ class Intel:
 
             # get service names for ports
             for port in self.ports:
-                self.ports_human.append(getservbyport(port))
+                if port is not None:
+                    try:
+                        self.ports_human.append(getservbyport(port))
+                    except OSError:
+                        # port not found
+                        self.ports_human.append("UNK")
 
         except KeyError:
             self.host_ = host_
@@ -56,4 +61,4 @@ class Intel:
         }
 
     def __str__(self):
-        return f"{self.host_} : {self.os_} : {self.ports} : {self.ports_human} : {self.org} : {self.location}"
+        return f"{self.host_} : {self.os_} : {self.ports} : {self.ports_human} : {self.org} \n\t{self.location}"
