@@ -1,6 +1,6 @@
 from socket import getservbyport
 
-from networkstats.geo.location import Location
+from geo.location import Location
 
 
 class Intel:

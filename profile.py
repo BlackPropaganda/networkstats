@@ -98,7 +98,7 @@ def get_connections(file):
 
 
 if __name__ == '__main__':
-    pcap_cache = Cache(get_connections("../data/pcap/test2.pcap"), config="config.json")
+    pcap_cache = Cache(get_connections("data/pcap/test2.pcap"), config="config.json")
     pcap_cache.collect_hosts()
     # print packet statistics (protocol breakdown)
     #
